@@ -2,7 +2,7 @@
 HF Python Code for GPU
 Title: Supporting Code for "Differentiable Tensor Formulations for Quantum Chemistry Methods in JAX"
 
-Authors: Andrei Pomorov
+Authors: Andrei Pomorov, Sagar Pandit
 
 This archive contains two code files used to generate the results and figures presented in the manuscript submitted to the American Chemical Society (ACS) journal.
 

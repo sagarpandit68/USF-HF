@@ -11,7 +11,7 @@ This archive contains two code files used to generate the results and figures pr
 CONTENTS
 --------
 
-1. usf.hf.py
+1. usf_hf.py
    - Description: A self-contained executable Python script that performs Hartree–Fock energy optimization via a hybrid method combining a modified secant phase and a trust-region constrained phase. It benchmarks convergence time and SCF energy for a given molecular geometry using PySCF and JAX.
    - Usage: Run with Python 3.10+ in an environment with PySCF, JAX, NumPy, SciPy, and Matplotlib installed.
    - Purpose: Demonstrates the timing, energy convergence, and optimization performance of the proposed differentiable SCF framework.

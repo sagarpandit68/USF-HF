@@ -1,5 +1,6 @@
 # USF-HF
 HF Python Code for GPU
+
 Title: Supporting Code for "Differentiable Tensor Formulations for Quantum Chemistry Methods in JAX"
 
 Authors: Andrei Pomorov, Sagar Pandit
@@ -10,12 +11,12 @@ This archive contains two code files used to generate the results and figures pr
 CONTENTS
 --------
 
-1. supplemental_source_code.py
+1. usf.hf.py
    - Description: A self-contained executable Python script that performs Hartree–Fock energy optimization via a hybrid method combining a modified secant phase and a trust-region constrained phase. It benchmarks convergence time and SCF energy for a given molecular geometry using PySCF and JAX.
    - Usage: Run with Python 3.10+ in an environment with PySCF, JAX, NumPy, SciPy, and Matplotlib installed.
    - Purpose: Demonstrates the timing, energy convergence, and optimization performance of the proposed differentiable SCF framework.
 
-2. supplemental_plots_code.ipynb
+2. usf_hf_plots_code.ipynb
    - Description: A Jupyter notebook for generating the convergence plots shown in the manuscript. This includes constraint norm reduction across both optimization phases and total SCF energy convergence curves.
    - Requirements: Same environment as above with Jupyter Notebook.
    - Purpose: Produces visual figures for supporting convergence analysis (Figures 1a–b and 2a-b in manuscript).
@@ -25,13 +26,13 @@ INSTRUCTIONS
 
 To execute the main optimizer script:
 
-    python supplemental_source_code.py
+    python usf_hf.py
 
 This will print out energy values, constraint norm, and runtime statistics to stdout.
 
 To generate the figures:
 
-    1. Open `supplemental_plots_code.ipynb` in Jupyter Notebook
+    1. Open `usf_hf_plots_code.ipynb` in Jupyter Notebook
     2. Ensure the `results` dictionary is preloaded from the previous run or re-run the optimization portion if needed
     3. Execute the notebook to view and save the plots
 

@@ -1,19 +1,19 @@
 # USF-HF
 HF Python Code for GPU
 
-Title: Supporting Code for "Differentiable Tensor Formulations for Quantum Chemistry Methods in JAX"
+Title: Supporting Code for "Differentiable Energy Optimization Framework for Hartree–Fock Calculations via a Bilevel L-BFGS Augmented-Lagrangian Method"
 
 Authors: Andrei Pomorov, Sagar Pandit
 
-This archive contains two code files used to generate the results and figures presented in the manuscript submitted to the American Chemical Society (ACS) journal.
+This archive contains two code files used to generate the results and figures presented in the manuscript submitted to the Elsevier journal.
 
 
 CONTENTS
 --------
 
 1. usf_hf.py
-   - Description: A self-contained executable Python script that performs Hartree–Fock energy optimization via a hybrid method combining a modified secant phase and a trust-region constrained phase. It benchmarks convergence time and SCF energy for a given molecular geometry using PySCF and JAX.
-   - Usage: Run with Python 3.10+ in an environment with PySCF, JAX, NumPy, SciPy, and Matplotlib installed.
+   - Description: A self-contained executable Python script that performs Hartree–Fock energy optimization via a hybrid method combining a modified secant phase and an L-BFGS phase. It benchmarks convergence time and SCF energy for a given molecular geometry using PySCF and JAX.
+   - Usage: Run with Python 3.10+ in an environment with PySCF, JAX, NumPy, and Matplotlib installed.
    - Purpose: Demonstrates the timing, energy convergence, and optimization performance of the proposed differentiable SCF framework.
 
 2. usf_hf_plots_code.ipynb
@@ -44,7 +44,6 @@ The following Python packages are required:
 - Python 3.10+
 - JAX (with GPU support)
 - NumPy
-- SciPy
 - Matplotlib
 - PySCF
 

@@ -604,29 +604,6 @@ lbfgs_once = jax.jit(
     donate_argnums=(0,)
 )
 
-
-@jax.jit
-def lbfgs_once_with_paper_alpha0(x0, JK, H, S, mu, lam):
-    state = solver.init_state(x0, JK, H, S, mu, lam)
-    x = x0
-    a_prev = 1.0  # start with default step size
-
-    def cond_fn(carry):
-        xk, st, a_prev = carry
-        return (jnp.linalg.norm(st.grad) > solver.tol) & (st.iter_num < solver.maxiter)
-
-    def body_fn(carry):
-        xk, st, a_prev = carry
-        # seed next step: η times previous step size
-        alpha0 = jnp.where(st.iter_num > 0, 0.75 * a_prev, 0.5)
-        st = st._replace(stepsize=alpha0)
-        x_next, st_next = solver.update(xk, st, JK, H, S, mu, lam)
-        return (x_next, st_next, st_next.stepsize)
-
-    x_final, st_final, _ = lax.while_loop(cond_fn, body_fn, (x, state, a_prev))
-    return x_final, st_final.iter_num
-
-    
 @jax.jit
 def run_lbfgs_phase(x_init, JK, H, S, mu=1.0, lam=jnp.zeros((occ_o, occ_o)), constr_tol=1e-5, max_outer=50):
 
